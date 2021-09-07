@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HelloController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello1', function()
+{
+    return "Hello World from Laravel!!";
+});
+
+Route::get('/hello2', function()
+{
+    return view('hello2');
+});
+
+Route::get('hello3', [HelloController::class, 'hello3']);
+Route::get('hello4', [HelloController::class, 'hello4']);
+
+Route::get('hello5/{name}', [HelloController::class, 'hello5']);
+Route::get('hello6/{name?}', [HelloController::class, 'hello6']);
+
