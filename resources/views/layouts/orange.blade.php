@@ -64,10 +64,10 @@
 			<div class="row">
 				<div class="left-menu text-right menu-1">
 					<ul>
-						<li><a href="work.html">Work</a></li>
-						<li><a href="about.html">About</a></li>
+						<li><a href="{{route('work')}}">Work</a></li>
+						<li><a href="{{route('about')}}">About</a></li>
 						<li class="has-dropdown">
-							<a href="services.html">Services</a>
+							<a href="{{route('services')}}">Services</a>
 							<ul class="dropdown">
 								<li><a href="#">Web Design</a></li>
 								<li><a href="#">eCommerce</a></li>
@@ -78,11 +78,11 @@
 					</ul>
 				</div>
 				<div class="logo text-center">
-					<div id="fh5co-logo"><a href="index.html">Orange.</a></div>
+					<div id="fh5co-logo"><a href="{{route('index')}}">Orange.</a></div>
 				</div>
 				<div class="right-menu text-left menu-1">
 					<ul>
-						<li><a href="blog.html">Blog</a></li>
+						<li><a href="{{route('blog')}}">Blog</a></li>
 						<li class="has-dropdown">
 							<a href="#">Tools</a>
 							<ul class="dropdown">
@@ -92,7 +92,7 @@
 								<li><a href="#">jQuery</a></li>
 							</ul>
 						</li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="{{route('contact')}}">Contact</a></li>
 						<!-- <li class="btn-cta"><a href="#"><span>Login</span></a></li> -->
 					</ul>
 				</div>

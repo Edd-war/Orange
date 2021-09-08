@@ -1,7 +1,7 @@
 @extends('layouts.orange')
 
 @section('content')
-<div id="fh5co-services" class="fh5co-bg-section">
+    <div id="fh5co-services" class="fh5co-bg-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-sm-4">

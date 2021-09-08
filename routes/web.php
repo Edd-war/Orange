@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\SiteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,13 @@ use App\Http\Controllers\HelloController;
 
 Route::get('/', function () {
     return view('orange.index');
-});
+})->name('index');
+
+Route::get('/about', [SiteController::class, 'about'])->name('about');
+Route::get('/work', [SiteController::class, 'work'])->name('work');
+Route::get('/services', [SiteController::class, 'services'])->name('services');
+Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
+Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
 
 Route::get('/hello1', function()
 {
