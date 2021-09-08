@@ -31,6 +31,6 @@ Route::get('/hello2', function()
 Route::get('hello3', [HelloController::class, 'hello3']);
 Route::get('hello4', [HelloController::class, 'hello4']);
 
-Route::get('hello5/{name}', [HelloController::class, 'hello5']);
+Route::get('hello5/{fisrtname}/{lastname}', [HelloController::class, 'hello5']);
 Route::get('hello6/{name?}', [HelloController::class, 'hello6']);
 
