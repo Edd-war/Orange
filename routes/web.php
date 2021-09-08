@@ -16,7 +16,7 @@ use App\Http\Controllers\SiteController;
 */
 
 Route::get('/', function () {
-    return view('orange.index');
+    return view('orange.index', ['print_form' => true]);
 })->name('index');
 
 Route::get('/about', [SiteController::class, 'about'])->name('about');
