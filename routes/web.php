@@ -15,7 +15,7 @@ use App\Http\Controllers\HelloController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('orange.index');
 });
 
 Route::get('/hello1', function()
