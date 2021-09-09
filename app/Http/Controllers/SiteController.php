@@ -20,11 +20,13 @@ class SiteController extends Controller
 
     public function services()
     {
-        $services=array();
-        for ($i=1; $i < 20; $i++) 
-        { 
-            $services[]=new Service($i, "My Service ".$i, "My description ".$i, "icon-eye");
-        }
+        // $services=array();
+        // for ($i=1; $i < 20; $i++) 
+        // { 
+        //     $services[]=new Service($i, "My Service ".$i, "My description ".$i, "icon-eye");
+        // }
+        $services = Service::all();
+        
         return view('orange.services', ['page_title' => 'Our Services', 'services' => $services]);
     }
 

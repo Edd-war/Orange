@@ -9,16 +9,18 @@ class Service extends Model
 {
     use HasFactory;
 
-    public $id;
-    public $name;
-    public $description;
-    public $icon;
+    // public $id;
+    // public $name;
+    // public $description;
+    // public $icon;
 
-    function __construct($id, $name, $description, $icon)
-    {
-        $this->id           = $id;
-        $this->name         = $name;
-        $this->description  = $description;
-        $this->icon         = $icon;
-    }
+    // function __construct($id, $name, $description, $icon)
+    // {
+    //     $this->id           = $id;
+    //     $this->name         = $name;
+    //     $this->description  = $description;
+    //     $this->icon         = $icon;
+    // }
+
+    
 }
