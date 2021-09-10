@@ -22,8 +22,14 @@ Route::get('/', function () {
 Route::get('/about', [SiteController::class, 'about'])->name('about');
 Route::get('/work', [SiteController::class, 'work'])->name('work');
 Route::get('/services', [SiteController::class, 'services'])->name('services');
+
 Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
+Route::get('/post/{postId}', [SiteController::class, 'post'])->name('post');
+
 Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
+
+
+
 
 Route::get('/hello1', function()
 {
