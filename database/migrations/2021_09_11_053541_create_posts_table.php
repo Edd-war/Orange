@@ -19,10 +19,9 @@ class CreatePostsTable extends Migration
             $table->string("author", 50);
             $table->text("content");
             $table->string("image", 100);
-            $table->unsignedBigInteger("category_id");
-            $table->foreign('category_id')
-                    ->references('id')
-                    ->on('categories');
+            // $table->unsignedBigInteger("category_id");
+            $table->foreignId('category_id')
+                    ->constrained('category');
             $table->timestamps();
         });
     }
