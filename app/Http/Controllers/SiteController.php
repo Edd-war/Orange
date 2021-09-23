@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Service;
-use App\Models\Blog;
+use App\Models\Post;
 
 class SiteController extends Controller
 {
@@ -33,7 +33,7 @@ class SiteController extends Controller
 
     public function blog()
     {
-        $blog = Blog::all()->sortByDesc('date');
+        $blog = Post::all()->sortByDesc('created_at');
         return view('orange.blog', [
             'page_title' => 'Blog',
             'posts' => $blog
@@ -42,12 +42,14 @@ class SiteController extends Controller
 
     public function post($postId)
     {
-        $post = Blog::find($postId);
+        $post = Post::find($postId);
+        $comments = Post::find($postId)->comments;
         // $post = Post::where('id', $postId)->first();
         return view('orange.post', [
-            'page_title' => 'Post',
-            'post' => $post
-        ]);
+                        'page_title'    => 'Post Details',
+                        'post'          =>  $post,
+                        'comments'      =>  $comments
+                    ]);
     }
 
     public function contact()
