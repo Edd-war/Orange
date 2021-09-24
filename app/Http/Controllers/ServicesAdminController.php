@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Service;
+use App\Models\Post;
 
 class ServicesAdminController extends Controller
 {
@@ -14,8 +16,12 @@ class ServicesAdminController extends Controller
     public function index()
     {
         $services = Service::all();
+        $blog = Post::all();
+        // print_r($services);
         // return view('services.index', ['services' => $services]);
-        return view('services.index', compactservices,'(services)');
+        // return view('services.index', compactservices,'(services)');
+        // return view(('services.index')->with('services', '$services'));
+        return view('services.index', compact('services'));
     }
 
     /**
@@ -25,7 +31,7 @@ class ServicesAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('services.create');
     }
 
     /**

@@ -7,10 +7,10 @@
         <div class="row">
             <div class="col-md-10" col-md-push-1 animate-box">
                 <h3>Services Management</h3>
-                <div>
+                <div style="text-align: right;">
                     <button class="btn btn-prymary" >New</button>
                 </div>
-                <table class="table table-default">
+                <table class="table table-bordered">
                     <tr>
                         <th>ID</th>
                         <th>NAME</th>
@@ -24,15 +24,14 @@
                             <td>{{$item->id}}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->description}}</td>
+                            <td>{{$item->icon}}</td>
                             <td><button class="btn btn-success">Edit</button></td>
                             <td><button class="btn btn-danger">Delete</button></td>
-                            <td>{{$item->icon}}</td>
-                            <td>{{$item->icon}}</td>
                         </tr>
-                    endforeach
+                    @endforeach
                 </table>
             </div>
         </div>
     </div>
 </div>
-
+@endsection
