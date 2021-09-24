@@ -20,7 +20,8 @@
                     <div class="panel panel-success">
                         <div class="panel-heading">Leave a comment:</div>
                         <div class="panel-body">
-                            <form action="" method="post">
+                            <form method="post">
+                                @csfr
                                 <div class="form-group">
                                     <label for="commenter">Commenter</label>
                                     <input type="text" name="commenter" value="" placeholder="your name" class="form-control"/>

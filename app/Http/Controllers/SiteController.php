@@ -40,9 +40,20 @@ class SiteController extends Controller
         ]);
     }
 
-    public function post($postId)
+    public function post(Request $request, $postId)
     {
         $post = Post::find($postId);
+
+        if($request-method() == "post"){
+            $comment=new Comment();
+            $comment->comment   = $request->get("comment");
+            $comment->commenter   = $request->get("commenter");
+            $comment->post_id   = $postId;
+            $comment->created_at   = date('Y-m-d h:i:sa');
+            $comment->updated_at   = date('Y-m-d h:i:sa');
+            $comment->save();
+        }
+
         $comments = Post::find($postId)->comments;
         // $post = Post::where('id', $postId)->first();
         return view('orange.post', [

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\ServicesAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,13 @@ Route::get('/work', [SiteController::class, 'work'])->name('work');
 Route::get('/services', [SiteController::class, 'services'])->name('services');
 
 Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
-Route::get('/post/{postId}', [SiteController::class, 'post'])->name('post');
+Route::get('/blog/post/{postId}', [SiteController::class, 'post'])->name('post');
+Route::post('/blog/post/{postId}', [SiteController::class, 'post'])->name('post');
 
 Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
+
+
+Route::resource('admin/services', ServicesAdminController::class);
 
 
 
