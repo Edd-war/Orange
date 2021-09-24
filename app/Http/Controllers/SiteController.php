@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Service;
 use App\Models\Post;
+use App\Models\Comment;
 
 class SiteController extends Controller
 {
@@ -44,7 +45,7 @@ class SiteController extends Controller
     {
         $post = Post::find($postId);
 
-        if($request-method() == "post"){
+        if($request->method() == "POST"){
             $comment=new Comment();
             $comment->comment   = $request->get("comment");
             $comment->commenter   = $request->get("commenter");
