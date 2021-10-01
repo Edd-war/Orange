@@ -28,11 +28,17 @@ Route::get('/blog', [SiteController::class, 'blog'])->name('blog');
 Route::get('/blog/post/{postId}', [SiteController::class, 'post'])->name('post');
 Route::post('/blog/post/{postId}', [SiteController::class, 'post'])->name('post');
 
+Route::get('/tools', [SiteController::class, 'tools'])->name('tools');
 Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
 
+Route::get('/departament/empleados/{id}', [Departaments::class, 'show'])->name('departament');
+Route::resource('/departament', Departaments::class);
 
 Route::resource('admin/services', ServicesAdminController::class);
 
+//Como se va a mostrar la URL  ---  Route::post('/post_view/{post_id}'
+//Como se llama el metodo en el SiteController   --- [SiteController::class, 'blog_post_view']
+//Es el nombre del recurso al que estoy mandando llamar  ---  name('comment.save')
 
 
 
