@@ -13,11 +13,11 @@ class Employees extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id_employee)
     {
-        $employees = Http::get('http://localhost:8080/employees/');
-        $employeesarray = $employees->json();
-        return view('orange.departament', compact('employeesarray'));
+        $employee = Http::get('http://localhost:8080/employees/'.$id_employee);
+        $employeearray = $employee->json();
+        return view('orange.employees', compact('employeearray'));
     }
 
     /**

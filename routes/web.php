@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\ServicesAdminController;
+use App\Http\Controllers\Departments;
+use App\Http\Controllers\Employees;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +33,9 @@ Route::post('/blog/post/{postId}', [SiteController::class, 'post'])->name('post'
 Route::get('/tools', [SiteController::class, 'tools'])->name('tools');
 Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
 
-Route::get('/departament/empleados/{id}', [Departaments::class, 'show'])->name('departament');
-Route::resource('/departament', Departaments::class);
+Route::get('/departament/employee/', [Departments::class, 'show'])->name('show');
+Route::get('/employee/details/{id}', [Employees::class, 'index'])->name('/employee/details');Route::resource('/department', Departments::class);
+Route::resource('/departament', Departments::class);
 
 Route::resource('admin/services', ServicesAdminController::class);
 

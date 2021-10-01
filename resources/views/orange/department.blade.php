@@ -6,12 +6,14 @@
 			<div class="row">
                 <h3> Selecciona un departamento y busca sus empleados</h3>
                 <label>Departamentos</label>
-                <select name="departament" id="id">
-                @foreach($departamentsarray as $departament)
-                        <option value="{{ $departament['id'] }}">{{ $departament['name'] }}</option>
-                @endforeach
-                </select>
-                <a href="{{route('show', $departament['id'])}}" class="btn btn-primary">Buscar</a>
+                <form method="GET" action="{{route('show')}}">
+                    <select name="department" id="id">
+                    @foreach($departmentsarray as $department)
+                            <option value="{{ $department['id'] }}">{{ $department['name'] }}</option>
+                    @endforeach
+                    </select>
+                    <input type="submit" class="btn btn-primary" />
+                </form>
 			</div>
             <br><br><br><br>
             <div class="col-md-10 col-md-push-1 animate-box">
@@ -31,7 +33,7 @@
                             <td>{{$employees['last_name']}}</td>
                             <td>{{$employees['gender']}}</td>
                             <td>{{$employees['departamentid']}}</td>
-                            <td><a href="" class="btn btn-success">Detalles</a></td>
+                            <td><a href="{{route('/employee/details', $employees['id'])}}" class="btn btn-success">Detalles</a></td>
                         </tr>
                     @endforeach
                 </table>

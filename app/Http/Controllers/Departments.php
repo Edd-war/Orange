@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Client;
 
-class Departaments extends Controller
+class Departments extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,11 @@ class Departaments extends Controller
      */
     public function index()
     {
-        $departaments = Http::get('http://localhost:8080/departaments/');
-        $departamentsarray = $departaments->json();
+        $departments = Http::get('http://localhost:8080/departments/');
+        $departmentsarray = $departments->json();
         $employees = Http::get('http://localhost:8080/employees/');
         $employeesarray = $employees->json();
-        return view('orange.departament', compact('departamentsarray','employeesarray'));
+        return view('orange.departament', compact('departmentsarray','employeesarray'));
     }
 
     /**
@@ -49,12 +49,14 @@ class Departaments extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request_id)
     {
-        $employe = Http::get('http://localhost:8080/departament/employees/'.$id);
+        //echo ($request_id->departament);
+        $employe = Http::get('http://localhost:8080/departments/employees?departament_id='.$request_id->departament);
         $employeesarray = $employe->json();
-        //print($employeesarray);
-        return view('orange.empleados', compact('employeesarray'));
+        $departments = Http::get('http://localhost:8080/departments/');
+        $departmentsarray = $departments->json();
+        return view('orange.departament', compact('employeesarray','departmentsarray'));
     }
 
     /**
