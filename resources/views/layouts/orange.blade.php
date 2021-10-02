@@ -93,6 +93,7 @@
 							</ul>
 						</li>
 						<li><a href="{{route('contact')}}">Contact</a></li>
+						<li><a href="{{route('department')}}">Human Resources</a></li>
 						<!-- <li class="btn-cta"><a href="#"><span>Login</span></a></li> -->
 					</ul>
 				</div>

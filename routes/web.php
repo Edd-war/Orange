@@ -35,7 +35,7 @@ Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
 
 Route::get('/department/employee/', [Departments::class, 'show'])->name('show');
 Route::get('/employee/details/{id}', [Employees::class, 'index'])->name('/employee/details');
-Route::resource('/department', Departments::class);
+Route::get('/department', [Departments::class, 'index'])->name('department');
 
 Route::resource('admin/services', ServicesAdminController::class);
 

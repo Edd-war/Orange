@@ -26,36 +26,20 @@
                         <p class="title">CEO & Founder, Example</p>
                         <p>Department: {{ $employee['departmentid'] }}</p>
                         <p>Birthday: {{ $employee['birth_date'] }}</p>
-                        <p>Género: {{ $employee['gender'] }}</p>
+                        <p>Gender: {{ $employee['gender'] }}</p>
                         <p>Hire date: {{ $employee['hire_date'] }}</p>
                         <p>Status: @if ($employee['active']==0)
-                                        Inactivo
+                                        Inactive
                                     @else
-                                        Activo
+                                        Active
                                     @endif
                         </p>
-                        {{-- <p class="text-justify"><b>Foto:</b>{{ $employee['photo'] }} --}}
-
                         <a href="#"><i class="fa fa-dribbble"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-linkedin"></i></a>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <p><button>Contact</button></p>
                     </div>
-                    {{-- <div class="col-lg-12">
-                        <hr>
-                        <h2 class="into-text text-center">
-                            <p class="text-justify"><b>Nombre:</b>
-                            <p class="text-justify"><b>Apellidos:</b>{{ }}
-                            <p class="text-justify"><b>Genero:</b>
-                            <p class="text-justify"><b>Fecha Nacimiento:</b>
-                            <p class="text-justify"><b>Fecha Contrato:</b>
-                            <p class="text-justify"><b>Estatus:</b>
-                            
-                            <p class="text-justify"><b>ID Departamento:</b>
-                        </h2>
-                        <hr>    
-                    </div> --}}
                 </div>
             </div>        
 		</div>
