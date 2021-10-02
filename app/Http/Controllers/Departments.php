@@ -19,7 +19,7 @@ class Departments extends Controller
         $departmentsarray = $departments->json();
         $employees = Http::get('http://localhost:8080/employees/');
         $employeesarray = $employees->json();
-        return view('orange.departament', compact('departmentsarray','employeesarray'));
+        return view('orange.department', compact('departmentsarray','employeesarray'));
     }
 
     /**
@@ -51,12 +51,12 @@ class Departments extends Controller
      */
     public function show(Request $request_id)
     {
-        //echo ($request_id->departament);
-        $employe = Http::get('http://localhost:8080/departments/employees?departament_id='.$request_id->departament);
+        // echo $request_id->department;
+        $employe = Http::get('http://localhost:8080/departments/employees?department_id='.$request_id->department);
         $employeesarray = $employe->json();
         $departments = Http::get('http://localhost:8080/departments/');
         $departmentsarray = $departments->json();
-        return view('orange.departament', compact('employeesarray','departmentsarray'));
+        return view('orange.department', compact('employeesarray','departmentsarray'));
     }
 
     /**

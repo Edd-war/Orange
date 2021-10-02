@@ -16,8 +16,8 @@ class Employees extends Controller
     public function index($id_employee)
     {
         $employee = Http::get('http://localhost:8080/employees/'.$id_employee);
-        $employeearray = $employee->json();
-        return view('orange.employees', compact('employeearray'));
+        //echo $employee['id']; SI SE DEJA ESTA LÍNEA, LUEGO NO CARGA NATURALMENTE EL LARAVEL LA PRÓXIMA INTERFAZ, Y SOLO MOSTRARÍA LA INFORMACIÓN CONSULTADA DESPLEGANDO LAS OPCIONES DE DESARROLLADOR DEL NAVEGADOR
+        return view('orange.employees', compact('employee'));
     }
 
     /**

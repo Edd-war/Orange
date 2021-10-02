@@ -32,7 +32,7 @@
                             <td>{{$employees['first_name']}}</td>
                             <td>{{$employees['last_name']}}</td>
                             <td>{{$employees['gender']}}</td>
-                            <td>{{$employees['departamentid']}}</td>
+                            <td>{{$employees['departmentid']}}</td>
                             <td><a href="{{route('/employee/details', $employees['id'])}}" class="btn btn-success">Detalles</a></td>
                         </tr>
                     @endforeach

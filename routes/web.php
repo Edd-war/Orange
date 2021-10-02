@@ -33,9 +33,9 @@ Route::post('/blog/post/{postId}', [SiteController::class, 'post'])->name('post'
 Route::get('/tools', [SiteController::class, 'tools'])->name('tools');
 Route::get('/contact', [SiteController::class, 'contact'])->name('contact');
 
-Route::get('/departament/employee/', [Departments::class, 'show'])->name('show');
-Route::get('/employee/details/{id}', [Employees::class, 'index'])->name('/employee/details');Route::resource('/department', Departments::class);
-Route::resource('/departament', Departments::class);
+Route::get('/department/employee/', [Departments::class, 'show'])->name('show');
+Route::get('/employee/details/{id}', [Employees::class, 'index'])->name('/employee/details');
+Route::resource('/department', Departments::class);
 
 Route::resource('admin/services', ServicesAdminController::class);
 
